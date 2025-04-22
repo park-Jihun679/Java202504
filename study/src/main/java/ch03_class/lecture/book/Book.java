@@ -1,4 +1,4 @@
-package lecture.book;
+package ch03_class.lecture.book;
 
 public class Book {
 
