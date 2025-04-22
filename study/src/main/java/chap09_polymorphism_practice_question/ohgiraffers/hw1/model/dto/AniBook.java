@@ -22,6 +22,6 @@ public class AniBook extends Book{
 
     @Override
     public String toString() {
-        return super.getTitle() + " / " + super.getAuthor() + " / " + super.getPublisher() + " / " + getAccessAge();
+        return super.toString() + " / " + getAccessAge();
     }
 }

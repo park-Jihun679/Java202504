@@ -22,6 +22,37 @@ public class LibraryMenu {
 
         Member newMember = new Member(name, age, gender);
         lm.insertMember(newMember);
+
+        while (true) {
+            System.out.println("==== 메뉴 ====");
+            System.out.println("1. 마이페이지");
+            System.out.println("2. 도서 전체 조회");
+            System.out.println("3. 도서 검색");
+            System.out.println("4. 도서 대여하기");
+            System.out.println("0. 프로그램 종료하기");
+
+            int programCode = Integer.parseInt(sc.next());
+            switch (programCode) {
+                case 1:
+                    System.out.println(lm.myInfo());
+                    break;
+                case 2:
+                    selectAll();
+                    break;
+                case 3:
+                    searchBook();
+                    break;
+                case 4:
+                    rentBoot();
+                    break;
+                case 0:
+                    sc.close();
+                    System.out.println("프로그램을 종료합니다.");
+                    return;
+                default:
+                    System.out.println("입력 가능한 숫자가 아닙니다.");
+            }
+        }
     }
 
     public void selectAll() {
@@ -32,16 +63,14 @@ public class LibraryMenu {
     }
 
     public void searchBook() {
-        System.out.println("검색 키워드: ");
+        System.out.println("검색할 제목 키워드 :  ");
         String keyword = sc.next();
 
-        Book[] searchedBookArray = lm.searchBook(keyword);
-        for (Book book : searchedBookArray) {
-            System.out.println(book.toString());
-        }
+        System.out.println(lm.searchBook(keyword));
     }
 
     public void rentBoot() {
+        selectAll();
         System.out.println("대여할 도서 번호: ");
         int index = Integer.parseInt(sc.next());
 
