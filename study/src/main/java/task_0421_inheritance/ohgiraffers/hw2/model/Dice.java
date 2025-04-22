@@ -7,8 +7,8 @@ public class Dice {
     private int number;
 
     public Dice() {
-        Random rand = new Random();
-        number = rand.nextInt(6) + 1;
+        Random random = new Random();
+        number = random.nextInt(6) + 1;
     }
 
     public int getNumber() {

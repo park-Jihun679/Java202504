@@ -17,8 +17,6 @@ public class Application {
 
         int diceResult;
 
-        // 자기가 만든 다이스
-
         System.out.println("🎲 HellDice로 주사위 던지기:");
         diceResult =  dicer.throwDice(dice1); // 항상 4 출력
         System.out.println("주사위 숫자: " + diceResult);

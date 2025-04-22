@@ -14,8 +14,8 @@ public class SuperDice extends Dice {
 
     @Override
     public int getNumber() {
-        Random rand = new Random();
-        super.setNumber(rand.nextInt(max) + min);
+        Random random = new Random();
+        super.setNumber(random.nextInt(max) + min);
         return super.getNumber();
     }
 }
