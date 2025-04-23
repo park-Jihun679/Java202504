@@ -3,6 +3,7 @@ package chap09_polymorphism_practice_question.ohgiraffers.hw1.view;
 import chap09_polymorphism_practice_question.ohgiraffers.hw1.controller.LibraryManager;
 import chap09_polymorphism_practice_question.ohgiraffers.hw1.model.dto.Book;
 import chap09_polymorphism_practice_question.ohgiraffers.hw1.model.dto.Member;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LibraryMenu {
@@ -65,8 +66,12 @@ public class LibraryMenu {
     public void searchBook() {
         System.out.println("검색할 제목 키워드 :  ");
         String keyword = sc.next();
-
-        System.out.println(lm.searchBook(keyword));
+        Book[] searchedBooks = lm.searchBook(keyword);
+        for (Book book : searchedBooks) {
+            if(book != null) {
+                System.out.println(book);
+            }
+        }
     }
 
     public void rentBoot() {
